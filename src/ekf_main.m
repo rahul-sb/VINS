@@ -1,7 +1,7 @@
 %{
     How to use:
-    1. Add the contents of this folder, "Data" and "Supplementary"
-       folder to the path.
+    1. Add the contents of this folder, "data" and "libraries"
+       folder and it's subfolders to MATLAB path.
     2. Change the different .mat files such as DataStraightLine.mat,
        DataMountain.mat etc., to test on different datasets.
     3. Refer to EKF_Tutorial.pdf in "Docs" folder for how this algorithm is implemented.
