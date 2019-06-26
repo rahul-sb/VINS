@@ -28,7 +28,7 @@ Location of quadcopter:
 
 ![img](https://drive.google.com/uc?export=view&id=16eCEcQqhZCgYkVDb4z0_MCXcgG35HtHf)
 
-You can see that the EKF tracks the pose obtained using GTSAM. There are two reasons on why this is the case:
+You can see that the EKF tracks the pose obtained using GTSAM. There are two reasons why this is the case:
 
 1. I've specified a higher noise sigma for the IMU data compared to the camera data. This means that the EKF trusts the data from GTSAM more than that from the IMU. 
 
