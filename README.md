@@ -14,7 +14,12 @@ The EKF consists of two main steps: Predict and Update. During the predict step,
 
 ## How to run the code?
 
-Add to MATLAB path the folders "/src", "/libraries" and "/data". Open the "efk_main.m" file in "/src" folder. If you want to view the results from different flight patterns of quadcopter change the 'DataStraightLine.mat' to any file in "/data", in the "ekf_main.m" file. Run the "ekf_main.m" file. You can visualize the results for different noise values by changing the "Q_t" and "R_t" values in lines 20 and 21 in the "ekf_main.m" file and see what happens when you give a very high noise value to one of the sensors.
+* Add to MATLAB path the folders "/src", "/libraries" and "/data". 
+* Open the "efk_main.m" file in "/src" folder.
+* _(Optional)_ If you want to view the results from different flight patterns of quadcopter change the 'DataStraightLine.mat' to any file in "/data", in the "ekf_main.m" file.
+* Run the "ekf_main.m" file. 
+
+Note; You can visualize the results for different noise values by changing the "Q_t" and "R_t" values in lines 20 and 21 in the "ekf_main.m" file and see what happens when you give a very high noise value to one of the sensors.
 
 
 ## Results
@@ -23,11 +28,11 @@ Location of quadcopter:
 
 ![img](https://drive.google.com/uc?export=view&id=16eCEcQqhZCgYkVDb4z0_MCXcgG35HtHf)
 
-You can see that the EKF tracks the GTSAM pose. There are two reasons for this:
+You can see that the EKF tracks the pose obtained using GTSAM. There are two reasons on why this is the case:
 
-1. I've specified a higher noise sigma for the IMU data compared to the camera data.
+1. I've specified a higher noise sigma for the IMU data compared to the camera data. This means that the EKF trusts the data from GTSAM more than that from the IMU. 
 
-2. I've chosen the starting position (global coordinates) of quadcopter as (0,0,0). I decided to use these values to interpret the working of the algorithm. You can change this value in line 27 in "ekf_main.m" to the initial value obtained from GTSAM.
+2. I've chosen the starting position (in global coordinates) of quadcopter as (0,0,0). I decided to use these values to interpret the working of the algorithm. You can change this value in line 27 in "ekf_main.m" to the initial value obtained from GTSAM.
 
 
 ## References
